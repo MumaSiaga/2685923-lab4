@@ -10,7 +10,6 @@ async function searchCountry(countryName) {
     }
 
     try {
-        showLoading(true);
         clearError();
         document.getElementById('country-info').innerHTML = '';
         document.getElementById('bordering-countries').innerHTML = '';
@@ -22,7 +21,6 @@ async function searchCountry(countryName) {
         }
 
         const data = await response.json();
-
         if (data.length === 0) {
             throw new Error('Country not found');
         }
