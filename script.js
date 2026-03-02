@@ -10,6 +10,7 @@ async function searchCountry(countryName) {
     }
 
     try {
+        showLoading(true);
         clearError();
         document.getElementById('country-info').innerHTML = '';
         document.getElementById('bordering-countries').innerHTML = '';
@@ -76,8 +77,8 @@ async function displayBorderingCountries(borderCodes) {
                 const countryCard = document.createElement('div');
                 countryCard.className = 'border-country-card';
                 countryCard.innerHTML = `
-                    <img src="${borderCountry.flags.svg}" alt="${borderCountry.name.common} flag" style="width: 100px; height: auto;">
                     <p>${borderCountry.name.common}</p>
+                    <img src="${borderCountry.flags.svg}" alt="${borderCountry.name.common} flag" style="width: 100px; height: auto;">
                 `;
 
                 borderingCountriesDiv.appendChild(countryCard);
